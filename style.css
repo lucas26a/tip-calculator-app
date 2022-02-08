@@ -1,0 +1,238 @@
+:root {
+
+  /* colors */
+  --primary: hsl(172, 67%, 45%);
+
+  /* neutral */
+  --darker-cyan: hsl(183, 100%, 15%);
+  --darker-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan: hsl(184, 14%, 56%);
+  --screen-bg: hsl(185, 41%, 84%);
+  --input-bg: hsl(189, 41%, 97%);
+  --app-bg: hsl(0, 0%, 100%);
+  --error: #b68372;
+
+  /* typography */
+  --form-inputs: 24px;
+  --font-family: 'Space Mono', monospace;
+
+  /* weights */
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+
+  /* border-radius */
+  --block-radius: 20px;
+  --button-radius: 6px;
+}
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+.attribution a { 
+  color: var(--darker-cyan);
+}
+*, 
+::before, 
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--screen-bg);
+  color: var(--darker-grayish-cyan);
+  font-weight: var(--bold);
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2.5rem;
+}
+input {
+  width: 100%;
+  height: 3rem;
+  border-radius: var(--button-radius);
+  font-family: var(--font-family);
+  font-size: var(--form-inputs);
+  font-weight: var(--bold);
+  padding-inline: 8px;
+  border: none;
+  background-color: var(--input-bg);
+  color: var(--darker-cyan);
+  height: 2.8rem;
+  text-align: end;
+}
+input:focus {
+  outline: 2px solid var(--primary);
+}
+button {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--darker-cyan);
+  color: var(--app-bg);
+  font-weight: var(--bold);
+  border: none;
+  border-radius: var(--button-radius);
+  font-size: var(--form-inputs);
+  cursor: pointer;
+  height: 3rem;
+}
+button:hover {
+ color: var(--darker-cyan);
+ background-color: var(--screen-bg);
+}
+.app {
+  background-color: var(--app-bg);
+  border-radius: var(--block-radius);
+  padding-top: 2.5rem;
+  max-width: 650px;
+}
+/* user-inputs */
+.user-inputs {
+  display: grid;
+  gap: 2rem;
+  margin-inline: 2rem;
+  margin-bottom: 2rem;
+}
+/* bill */
+
+.bill-label {
+  display: inline-block;
+  margin-bottom: .75rem;
+}
+.bill-input-block {
+  position: relative;
+}
+.bill-icon {
+  background: url("./images/icon-dollar.svg") center no-repeat;
+  width: var(--form-inputs);
+  height: 100%;
+  position: absolute;
+  left: 1rem;
+}
+/* tip */
+
+.tip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.tip span {
+  grid-column: 1 / -1;
+}
+button.selected {
+  background-color: var(--primary);
+  color: var(--darker-cyan);
+}
+.custom {
+  text-align: right;
+  font-weight: 600;
+}
+/* number of people */
+
+.number-of-people-block {
+  position: relative;
+}
+.number-of-people-icon {
+  position: absolute;
+  background: url("./images/icon-person.svg") center no-repeat;
+  width: var(--form-inputs);
+  height: 100%;
+  left: 1rem;
+}
+
+.number-of-people-label .error {
+  color: var(--error);
+  margin-left: auto;
+  display: none;
+}
+
+/* user-inputs block end */
+/* result */
+
+.result {
+  background-color: var(--darker-cyan);
+  border-radius: var(--block-radius);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  margin-inline: 1.5rem;
+} 
+.result-block {
+  width: 100%;
+}
+.tip-amount-block,
+.total-block {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.tip-amount-block,
+.total-block, .reset {
+  width: 100%;
+}
+.tip-amount-label,
+.total-label {
+  color: var(--app-bg);
+  font-size: 18px;
+}
+.tip-amount,
+.total {
+  font-size: 29px;
+}
+.tip-amount-label::after,
+.total-label::after {
+  content: "/ person";
+  display: block;
+  font-size: 13.5px;
+  color: var(--dark-grayish-cyan);
+}
+.tip-amount,
+.total {
+  font-size: 32px;
+  color: var(--primary);
+}
+.reset {
+  background-color: var(--primary);
+  color: var(--darker-cyan);
+}
+.reset:hover {
+  background-color: var(--screen-bg);
+  cursor: pointer;
+}
+/* result block end */
+/* app block end */
+
+@media screen and (min-width: 700px) {
+  header {
+    height: 16rem;
+  }
+  .app {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 920px;
+    margin-inline: auto;
+    padding: 2rem;
+  }
+  .user-inputs {
+    margin-inline: auto;
+    min-width: 350px;
+  }
+  .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 2 / -1;
+    margin-inline: 0;
+    padding-block: 1rem 2.5rem;
+  }
+  .result-block {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-around;
+  }
+}
