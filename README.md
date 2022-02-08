@@ -10,10 +10,8 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -35,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](hhttps://github.com/lucas26a/tip-calculator-app)
-- Live Site URL: [Netlify](https://)
+- Live Site URL: [Netlify](https://ugly-tipcalculatorapp.netlify.app/)
 
 ## My process
 
@@ -54,7 +52,6 @@ input, focusin, focusout and change events.
 ### Useful resources
 
 - [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
-
 
 ## Author
 
